@@ -61,7 +61,7 @@ After Ryan's first review, new entries would include:
 - NASA equinox/solstice diagram for "annual planting cycle" beat — missed that the next-section content is about Sirius/Nile
 
 ## Profile Evolution Log
-- **v1 (2026-04-20)** — Incorporated Ryan's row-by-row critique of first 2 min of Ch 1 test (sheet `1VlYEEIqZPcYSvpUSTjWwEF_1BMrSTzO9qSx2KYvLSy0`). Added 3 forbidden moves, 1 winning pattern, 1 losing pattern.
+- **v1 (2026-04-20)** — Incorporated Ryan's row-by-row critique of first 2 min of Ch 1 test (sheet `<REDACTED-TEST-SHEET-ID>`). Added 3 forbidden moves, 1 winning pattern, 1 losing pattern.
 ```
 
 ## Verification checklist

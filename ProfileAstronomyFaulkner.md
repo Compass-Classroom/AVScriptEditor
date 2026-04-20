@@ -7,11 +7,12 @@ audience: Classical Christian high school (homeschool + Trail Life context)
 version: 0 (seed)
 last_updated: 2026-04-20
 source_of_truth: Ryan Stufflebeam's review of Chapter 1 test pass (first 2 min)
+test_sheet: <REDACTED-TEST-SHEET-ID>
 ---
 
 # Profile: Astronomy / Faulkner
 
-Editorial taste profile for Dr. Danny Faulkner's Astronomy course, edited by Ryan Stufflebeam. First seeded from Ryan's row-by-row critique of the Chapter 1 image test (WORKING tab of sheet `1VlYEEIqZPcYSvpUSTjWwEF_1BMrSTzO9qSx2KYvLSy0`).
+Editorial taste profile for Dr. Danny Faulkner's Astronomy course, edited by Ryan Stufflebeam. First seeded from Ryan's row-by-row critique of the Chapter 1 image test (WORKING tab of sheet `<REDACTED-TEST-SHEET-ID>`).
 
 ## Editorial Voice
 
@@ -116,4 +117,4 @@ TYPE:hold | keep prior image on screen
 
 ## Profile Evolution Log
 
-- **v0 (2026-04-20)** — Initial seed from Ryan Stufflebeam's review of Chapter 1 test (first 2 min, sheet `1VlYEEIqZPcYSvpUSTjWwEF_1BMrSTzO9qSx2KYvLSy0`). All forbidden moves + winning/losing patterns derive from that review.
+- **v0 (2026-04-20)** — Initial seed from Ryan Stufflebeam's review of Chapter 1 test (first 2 min, sheet `<REDACTED-TEST-SHEET-ID>`). All forbidden moves + winning/losing patterns derive from that review.
