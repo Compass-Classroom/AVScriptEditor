@@ -4,8 +4,8 @@ course: Astronomy (Compass Classroom, Danny Faulkner)
 instructor: Danny Faulkner
 editor: Ryan Stufflebeam
 audience: Classical Christian high school (homeschool + Trail Life context)
-version: 0 (seed)
-last_updated: 2026-04-20
+version: 1
+last_updated: 2026-04-21
 source_of_truth: Ryan Stufflebeam's review of Chapter 1 test pass (first 2 min)
 test_sheet: <REDACTED-TEST-SHEET-ID>
 ---
@@ -60,6 +60,7 @@ Percentages are directional, not enforced — aesthetic fit to the beat wins. Te
 6. **Space imagery for etymology beats** — Greek word roots should be on-screen text, optionally paired with a period-appropriate historical illustration
 7. **Cheesy stock-feel composites** — "family portrait of planets" clip-art aesthetic
 8. **Pretty-but-irrelevant imagery** — a gorgeous Hubble deep-field does not automatically support whatever the narrator is saying
+9. **Zodiac imagery leading a "calendar" beat** — a high-school viewer without archaeology/antiquities background reads the zodiac before the calendar, defeating the pedagogical point. Zodiac belongs in astrology-origins beats, not in calendar-marking-time beats.
 
 ## Text-Beat Signals (leave blank — NOT this skill's job)
 
@@ -77,7 +78,10 @@ These content types belong to the future text-handler agent. AVScriptEditor iden
 - **Concept cycle**: for Day 4 "sun, moon, and stars," a short cycle — sun → moon → stars → back — beats a single composite
 - **Period-correct historical art for historical claims**: engraving of Greek astronomers for "aster / nomos" etymology or "oldest of the sciences"
 - **Atmospheric Earth imagery for "marking time" / orbital mechanics**: day/night terminator from space (I17 / I20 territory)
-- **Pillars of Creation for cosmic-scale biblical language** (Day 2 "heavens") — iconic, evocative, not generic
+- **Pillars of Creation for cosmic-scale biblical language** (Day 2 "heavens") — iconic, evocative, not generic — *but see v1 refinement below: when historical imagery already leads into the beat, maintain that lane*
+- **Historical-lane continuity across section transitions** (v1) — once a historical visual lane is established, preserve it for adjacent biblical/cosmic beats. Example: if the beats leading into "God created the heavens on day 2" are historical engravings of ancient astronomers, the Day-2 beat should stay in that lane (altarpiece, illuminated manuscript) rather than pivoting to a JWST nebula.
+- **Subject + context pairing** (v1) — when a beat names both an astronomical object AND a specific geography (e.g., Sirius over Egypt), the brief must put both in frame so the viewer connects them. The object alone is insufficient.
+- **Zodiac in astrology-origins beats, not calendar beats** (v1) — zodiac imagery reads as "astrology" to a high-school viewer. Use it where the instruction is about astrology's origins; keep it out of "calendar / marking time" beats (which need a calendar to read as a calendar first).
 
 ## Losing Patterns (from Ryan's review — do not repeat)
 
@@ -119,3 +123,4 @@ TYPE:hold | keep prior image on screen
 ## Profile Evolution Log
 
 - **v0 (2026-04-20)** — Initial seed from Ryan Stufflebeam's review of Chapter 1 test (first 2 min, sheet `<REDACTED-TEST-SHEET-ID>`). All forbidden moves + winning/losing patterns derive from that review.
+- **v1 (2026-04-21)** — Incorporated Ryan's row-by-row critique of the full BriefOnly dry run (`Feedback/Ryans-Feedback-2026-04-21-1016.md`). Added 3 winning patterns (historical-lane continuity, subject + context pairing, zodiac-placement rule) and 1 forbidden move (zodiac leading a calendar beat). Density target intentionally unchanged — Ryan noted the over-coverage was tolerable and he wants more options in practice; revisit scheduled after a second pass (tracked in `ROADMAP.md`). Two architectural blockers from the same review were addressed in separate commits: BRIEF column (commit d69b6eb) and image-only scope narrowing (commit b70c300).
