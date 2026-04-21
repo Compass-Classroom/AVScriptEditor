@@ -27,8 +27,8 @@ Default, safest AVScriptEditor workflow. Walks the transcript, writes per-row im
 1. **Voice notification.** Send the mandatory curl + text notification.
 2. **Load profile.** Read `~/.claude/skills/AVScriptEditor/Profile<PascalCase>.md`. If the slug file does not exist, stop and ask via AskUserQuestion which profile to use (list `Profile*.md` files minus `ProfileTemplate.md`).
 3. **Read the transcript.** `gws sheets spreadsheets values get` on the WORKING tab, range `A1:J<last_row>`. Capture TIMECODE, AUDIO, TEXT, SECTION per row.
-4. **Pacing pass.** Walk the rows top-to-bottom. Applying the profile's **density target**, decide which rows get briefs and which do not. Rows without a brief are explicitly left blank (not forgotten). Use the profile's on-screen-text-only triggers to mark those as `TYPE:text`.
-5. **Beat-type classification.** For each brief-eligible row, decide the image type using the profile's **Sourcing Priority by Beat Type** table. Assign one of: `science`, `historical`, `art`, `text`, `cycle:N`, `hold`.
+4. **Pacing pass.** Walk the rows top-to-bottom. Applying the profile's **density target**, decide which rows get image briefs and which do not. Rows without a brief are explicitly left blank (not forgotten). Rows matching the profile's `Text-Beat Signals` stay blank — they belong to the future text-handler agent, not this skill.
+5. **Beat-type classification.** For each brief-eligible row, decide the image type using the profile's **Sourcing Priority by Beat Type** table. Assign one of: `science`, `historical`, `art`, `cycle:N`, `hold`. Do NOT emit `TYPE:text` — text handling is out of scope.
 6. **Concrete visual description.** Write an 8–16 word visual description of the image concept. Must describe *what the image shows* in a way that matches the *meaning* of the audio, not just the topic keyword. Cross-check against the profile's **Forbidden Moves** — if the brief pattern-matches a forbidden move, rewrite.
 7. **Sourcing hint.** Append a short hint naming the likely subject or search term the sourcer should use (e.g., `FindArt: "Greek astronomers engraving 18th c."` or `FindScienceMedia: "Pillars of Creation JWST"`).
 8. **Format.** `TYPE:<tag> | <visual description> | <sourcing hint>` — single line per row.
@@ -45,7 +45,7 @@ Default, safest AVScriptEditor workflow. Walks the transcript, writes per-row im
 ## Output example
 
 ```
-Row 3  (00:00): TYPE:text | "astro-" + "-nomos" — Greek roots side-by-side with English | on-screen text, no image
+Row 3  (00:00): (blank — Greek etymology; text-handler agent's territory)
 Row 4  (00:05): (blank — hold prior)
 Row 5  (00:09): TYPE:historical | 18th-c. engraving of Greek astronomers cataloging stars | FindArt: "ancient Greek astronomer engraving"
 Row 12 (00:30): TYPE:historical | medieval astronomer with astrolabe, woodcut style | FindArt: "medieval astronomer woodcut"

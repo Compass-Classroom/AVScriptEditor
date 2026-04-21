@@ -44,7 +44,9 @@ One-paragraph orientation: what this course is, who teaches it, who edits image 
 2. ...
 3. ...
 
-## On-Screen-Text-Only Content Types
+## Text-Beat Signals (leave blank — NOT this skill's job)
+
+Rows matching these signals get a blank BRIEF — they belong to the future text-handler agent.
 
 - ...
 
@@ -58,7 +60,7 @@ One-paragraph orientation: what this course is, who teaches it, who edits image 
 
 ## Image Type Tags
 
-Standard set inherited from `ProfileAstronomyFaulkner.md`: `science`, `historical`, `art`, `text`, `cycle:N`, `hold`. Override here only if this course needs additional tags.
+Standard set inherited from `ProfileAstronomyFaulkner.md`: `science`, `historical`, `art`, `cycle:N`, `hold`. Override here only if this course needs additional tags. (No `text` tag — text is a separate agent's job.)
 
 ## Brief Format
 

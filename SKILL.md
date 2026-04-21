@@ -5,7 +5,9 @@ description: Editorial layer for Compass Classroom AV-script Google Sheets. Read
 
 # AVScriptEditor
 
-Editorial dispatcher for AV-script image planning. Decides **which** audio beats deserve images and **what kind** of image each beat needs, then dispatches to the right sourcing skill. Per-course editorial taste lives in profile files so the skill scales to every Compass course.
+Editorial dispatcher for AV-script **image** planning. Decides **which** audio beats deserve images and **what kind** of image each beat needs, then dispatches to the right sourcing skill. Per-course editorial taste lives in profile files so the skill scales to every Compass course.
+
+**Scope: images only.** On-screen text callouts (word-of-the-day builds, scripture citations, definition cards, etc.) are NOT this skill's job. Text selection needs textbook context that the image-review agent doesn't have, and mixing the two muddies both passes. Text beats are left blank by AVScriptEditor; a separate text-handler agent (future) fills them in.
 
 ## 🚨 MANDATORY: Voice Notification (REQUIRED BEFORE ANY ACTION)
 
@@ -85,7 +87,7 @@ Every new course needs its own profile so the skill inherits its editorial taste
 3. **Fill in the profile** — every section in the template matters. Pay special attention to:
    - `editor` and `instructor` in frontmatter (who owns editorial taste, who teaches the course)
    - `Density Target` (images per audio time unit)
-   - `Aesthetic Mix` (target distribution across science / historical / text / art)
+   - `Aesthetic Mix` (target distribution across science / historical / art — **no text**; text is a separate agent's job)
    - `Sourcing Priority by Beat Type` (when to use FindScienceMedia vs FindArt)
    - `Forbidden Moves` — start with 2–3 obvious ones; more accumulate as reviewers give feedback
 4. **Register in the table above** — add a row to the Profiles table in this file.

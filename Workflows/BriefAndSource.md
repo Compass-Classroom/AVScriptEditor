@@ -28,7 +28,6 @@ Runs `BriefOnly` first, then dispatches each brief to the right sourcing skill (
     - `TYPE:science` → invoke `FindScienceMedia` (Tier 1: NASA/NOAA/USGS). Pass `description` + `hint` as the search.
     - `TYPE:historical` → invoke `FindArt` with `historical` filter (Wikimedia/museums/public-domain engravings).
     - `TYPE:art` → invoke `FindArt` with `art` filter.
-    - `TYPE:text` → skip sourcing; write `TYPE:text — on-screen text, no image` to IMAGE column; leave URL/THUMBNAIL blank.
     - `TYPE:cycle:N` → dispatch N times per the per-slot hints; populate with comma-separated URLs in URL column and first-slot thumbnail in H.
     - `TYPE:hold` → skip sourcing; copy prior image's references into IMAGE/FILE NAME/THUMBNAIL/URL.
 6. **Select the single best candidate per brief.** If the sourcer returns a shortlist, apply the profile's winning/losing patterns to pick. Prefer `~orig.jpg` URLs for NASA assets.

@@ -20,7 +20,7 @@ Editorial taste profile for Dr. Danny Faulkner's Astronomy course, edited by Rya
 - Faulkner's teaching style is anecdotal, biblical, historically grounded. Images should support *meaning*, not decorate topic keywords.
 - When Faulkner names a historical figure, people group, or period, imagery should be **historical/artistic** (engravings, woodcuts, museum pieces), not modern space photography.
 - When he talks about cosmos, celestial bodies, or Earth observation, imagery should be **scientific** (NASA / NOAA / USGS).
-- When he defines a word, cites scripture, or explains a vocabulary term, **on-screen text** beats any image.
+- When he defines a word, cites scripture, or explains a vocabulary term, **leave the beat blank** for the separate text-handler agent — AVScriptEditor no longer emits text callouts.
 
 ## Density Target
 
@@ -28,16 +28,15 @@ Editorial taste profile for Dr. Danny Faulkner's Astronomy course, edited by Rya
 
 Explicit rule: a 30-second section should have **1–2 images**, not 5. Hold images longer; let the viewer stay with a concept.
 
-## Aesthetic Mix (target distribution per chapter)
+## Aesthetic Mix (target distribution per chapter — images only)
 
 | Type | Target % | Typical sourcing |
 |------|---------|------------------|
-| NASA / NOAA / USGS science imagery | ~40% | FindScienceMedia |
-| Historical engravings, woodcuts, museum pieces | ~35% | FindArt |
-| On-screen text only (no image) | ~15% | n/a (production does the text) |
-| Artistic illustration, paintings, maps | ~10% | FindArt |
+| NASA / NOAA / USGS science imagery | ~45% | FindScienceMedia |
+| Historical engravings, woodcuts, museum pieces | ~40% | FindArt |
+| Artistic illustration, paintings, maps | ~15% | FindArt |
 
-Percentages are directional, not enforced — aesthetic fit to the beat wins.
+Percentages are directional, not enforced — aesthetic fit to the beat wins. Text beats are out of scope (handled by a separate text-handler agent) and do not count in this distribution.
 
 ## Sourcing Priority by Beat Type
 
@@ -45,8 +44,8 @@ Percentages are directional, not enforced — aesthetic fit to the beat wins.
 |-------------|----------------|----------|
 | Cosmos, planets, stars, nebulae, deep space | FindScienceMedia | FindArt (historical astronomy art) |
 | Earth observation, weather, seasons from space | FindScienceMedia | — |
-| Etymology, vocabulary, Greek/Latin words | **on-screen text only** | FindArt (if a period visual strengthens it) |
-| Scripture citation (book:chapter:verse) | **on-screen text only** | — |
+| Etymology, vocabulary, Greek/Latin words | **leave blank** (text agent territory) | FindArt (ONLY if the image clearly supports, not replaces, text) |
+| Scripture citation (book:chapter:verse) | **leave blank** (text agent territory) | — |
 | Ancient/historical figures, cultures, eras | FindArt | FindScienceMedia (only if literal object) |
 | Agriculture, daily life, diurnal human scenes | FindArt (paintings, etchings, photos) | FindScienceMedia (only if landscape scale works) |
 | Biblical scenes (Creation, Day 2, Day 4, Magi) | FindArt (historical religious art) OR cosmic Hubble/JWST imagery | — |
@@ -62,12 +61,14 @@ Percentages are directional, not enforced — aesthetic fit to the beat wins.
 7. **Cheesy stock-feel composites** — "family portrait of planets" clip-art aesthetic
 8. **Pretty-but-irrelevant imagery** — a gorgeous Hubble deep-field does not automatically support whatever the narrator is saying
 
-## On-Screen-Text-Only Content Types (no image needed)
+## Text-Beat Signals (leave blank — NOT this skill's job)
+
+These content types belong to the future text-handler agent. AVScriptEditor identifies them only to avoid briefing an image over them — the BRIEF cell stays empty for these rows so the text agent can fill them on its own pass.
 
 - Greek or Latin word roots and translations
 - Scripture citations (explicit book/chapter/verse)
 - Vocabulary definitions being read aloud
-- Lists of things where the list itself is the point (e.g., "light, signs, times, seasons" can be a bullet build)
+- Lists of things where the list itself is the point (e.g., "light, signs, times, seasons" — a bullet build)
 - Short definitional asides ("diurnal means...")
 
 ## Winning Patterns (from Ryan's review)
@@ -96,9 +97,10 @@ Every brief written by AVScriptEditor includes a `TYPE:` tag so downstream workf
 | `science` | NASA/NOAA/USGS-style scientific imagery | FindScienceMedia |
 | `historical` | Engravings, woodcuts, old photographs, period paintings | FindArt |
 | `art` | Fine art, illustration, non-historical artistic rendering | FindArt |
-| `text` | On-screen text only, no image needed | (production) |
 | `cycle:N` | Multi-image concept cycle (e.g., `cycle:3` = three images shown in quick succession) | varies — specify per-slot |
 | `hold` | Intentionally reuse / hold prior image for this beat | (editor) |
+
+Note: `TYPE:text` was removed from this skill's tag set. Text-only beats get a blank BRIEF cell; the separate text-handler agent (future) will fill those.
 
 ## Brief Format (what goes in BRIEF column — J)
 
@@ -108,7 +110,6 @@ TYPE:<tag> | <concrete visual description, 8-16 words> | <sourcing hint or speci
 
 Examples:
 ```
-TYPE:text | "astron-" + "-nomos" — Greek roots side-by-side with English | on-screen text, no image
 TYPE:historical | 18th-c. engraving of Greek astronomers at work | FindArt: "ancient Greek astronomers engraving"
 TYPE:science | Hubble/JWST nebula evoking cosmic creation | FindScienceMedia: "Pillars of Creation"
 TYPE:cycle:3 | Sun → Moon → starfield, 2 sec each | slot 1: sun disk; slot 2: crescent moon; slot 3: starfield
