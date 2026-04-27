@@ -4,9 +4,9 @@ course: Astronomy (Compass Classroom, Danny Faulkner)
 instructor: Danny Faulkner
 editor: Ryan Stufflebeam
 audience: Classical Christian high school (homeschool + Trail Life context)
-version: 6
-last_updated: 2026-04-26
-source_of_truth: Ryan Stufflebeam's ch01-1 v1+v5 sourcing reviews — six durable sourcing rules codified after pattern-matching on recurring back-and-forths
+version: 7
+last_updated: 2026-04-27
+source_of_truth: Ryan Stufflebeam's ch01-1 v1+v5+v6 sourcing reviews — eleven durable sourcing rules; v7 adds five rules from the section-by-section v6 re-source pass
 test_sheet: <REDACTED-TEST-SHEET-ID>
 ---
 
@@ -286,6 +286,26 @@ Single picks for `TYPE:art`, `TYPE:historical`, `TYPE:artifact` are the wrong de
 **Single picks are fine for `TYPE:science`** — when NASA Pillars or NASA SVS Moon Phase 2026 plain webm is the canonical answer, one pick is right.
 
 **Cycles (`TYPE:cycle:N`) opt out** of the 3-options rule — those are conceptually deterministic (Day-4 sun → moon → stars). One canonical asset per slot. If a cycle slot turns out wrong, Ryan flags it specifically and we swap that slot.
+
+## Honor cycle:N counts when sourcing (procedural)
+
+When a brief says `TYPE:cycle:2`, source **2** alternates — not 1. Sourcing fewer slots than the cycle calls for forces a re-source round. If a slot can't be cleanly filled (e.g., one half is fair-use with no PD equivalent), surface that explicitly in the license field rather than silently delivering a single. The cycle count is a contract from the brief; treat it as such.
+
+## Color over B&W when the subject is in living memory
+
+For 20th–21st-century subjects (working scientists, recent events, modern instruments), prefer color even at cost of resolution. B&W reads as "historical" and breaks the modern-relevance beat — Sagan in B&W lands wrong because the audience knows him as a TV-era figure. **Pre-photographic and early-photo subjects (Huxley 1863 frontispiece, Newton's apple tree, Renaissance prints) read fine in monochrome** — period-appropriate. The split is roughly: post-1950 subject → push for color; pre-1900 subject → monochrome neutral.
+
+## Query Tier 0 (CCmini) first for Christian / religious art
+
+CCmini's painting gallery has dense coverage of Christ-in-landscape, Brueghel/Perugino/Saftleven baptism scenes, Cranach religious works, and other classical/romantic Christian imagery that Wikimedia under-serves at hi-res. Default order for `TYPE:art` with Christian subject matter: **CCmini FTS query → Wikimedia → Tier 2 museums.** Querying CCmini early routinely saves a swap round on this audience's content.
+
+## "Show the experiment" — close enough to read
+
+For `TYPE:science` beats illustrating a specific demo or apparatus, the action must read in 2 seconds. Wide-context shots that include the demonstration but bury it in environment fail (Apollo 15 hammer/feather wide shot — viewer can't tell what's falling). The experiment IS the subject; frame it that way. **Sub-floor strobe/close-up shots that clearly show the demo are preferable to hi-res wide shots that bury it** (image-as-subject exception per resolution rule).
+
+## Observatory shots need the observatory in frame
+
+For "professional observatory at night" beats, the observatory dome / telescope must be visibly in frame. Distant summit panoramas with no visible domes (Mauna Kea summit panorama from afar) read as "starry sky" not "observatory." Prefer ESO Paranal/La Silla/Mauna Kea shots **with telescopes clearly silhouetted or featured**, even at lower resolution than a pure-skyscape panorama.
 
 ## File-Content Verification (`VERIFY:` Annotation)
 
